@@ -14,12 +14,12 @@ import os
 #thank the author for his/her efforts.
 
 def filterCoordinate(c,m):
-	if c < 0:
-		return 0
-	elif c > m:
-		return m
-	else:
-		return c
+    if c < 0:
+    	return 0
+    elif c > m:
+    	return m
+    else:
+    	return c
 
 def convertEllipseToRect(ellipseFilename, rectFilename):
     
