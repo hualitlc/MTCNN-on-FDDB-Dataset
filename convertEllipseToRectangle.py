@@ -10,6 +10,9 @@ from PIL import Image
 import cv2
 import os
 
+#Core codes come from https://github.com/ankanbansal/fddb-for-yolo/blob/master/convertEllipseToRect.py, 
+#thank the author for his/her efforts.
+
 def filterCoordinate(c,m):
 	if c < 0:
 		return 0
