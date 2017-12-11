@@ -4,7 +4,11 @@
 import sys, os
 import numpy as np
 from math import *
+import math
 from PIL import Image
+
+import cv2
+import os
 
 def filterCoordinate(c,m):
 	if c < 0:
@@ -24,6 +28,7 @@ def convertEllipseToRect(ellipseFilename, rectFilename):
     while i < len(lines):
         img_file = '/home/tianluchao/ProgramFiles/mtcnn/data/' + lines[i] + '.jpg'
         img = Image.open(img_file)
+        img_cv=cv2.imread(img_file)
         w = img.size[0]
         h = img.size[1]
         num_faces = int(lines[i+1])
@@ -54,6 +59,22 @@ def convertEllipseToRect(ellipseFilename, rectFilename):
         
             text = img_file + '\n' + str(x_min) + ' ' + str(y_min) + ' ' + str(abs(x_max-x_min)) + ' ' + str(abs(y_max-y_min)) + '\n'
             f.write(text)
+
+            #another method to calculate the rectangle surrounding the ellipse
+            # rectH = 2*a*(math.cos(math.radians(abs(angle))))
+            # rectW = 2*b*(math.cos(math.radians(abs(angle))))
+
+            # lx = int(max(0, centre_x - rectW/2))
+            # ly = int(max(0, centre_y - rectH/2))
+            # rx = int(min(w-1, centre_x + rectW/2))
+            # ry = int(min(h-1, centre_y + rectH/2))
+
+            # #show the converted bounding box on the image
+            # cv2.rectangle(img_cv, (int(x_min), int(y_min)), (int(x_max), int(y_max)), (0,255,0), 5)
+            # #cv2.rectangle(img_cv, (int(lx), int(ly)), (int(rx), int(ry)), (0,0,255), 3) #red
+            # #cv2.ellipse(img_cv, (int(centre_x),int(centre_y)),(int(b),int(a)),int(angle),0,360,(0,0,255),-1) #show the ellipse
+            # cv2.imshow('img', img_cv)
+            # cv2.waitKey(1000)
 
         i = i + num_faces + 2
 
