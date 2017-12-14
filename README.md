@@ -20,7 +20,7 @@ We can use the **demo.py** to run mtcnn framwork on general images. This file co
 
 
 ### Run MTCNN on FDDB dataset
-We can use the **runFDDB.py** to run mtcnn framwork on [FDDB dataset](http://vis-www.cs.umass.edu/fddb/). Core codes come from [DuinoDu/mtcnn/demo.py](https://github.com/DuinoDu/mtcnn/blob/master/demo.py).
+We can use the **runFDDB.py** to run mtcnn framwork on [FDDB dataset](http://vis-www.cs.umass.edu/fddb/).
 
 
 
