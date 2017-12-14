@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+# core code come from https://github.com/DuinoDu/mtcnn, we import his/her demo.py in our runFDDB.py.
+# Thank the author for his/her efforts.
+
 import sys, os
 import numpy as np
 from math import *
